@@ -155,6 +155,25 @@ to reset.
         print("wake up!")
         rtc.alarm1_status = False
 
+Temperature
+-----------
+
+You can access the internal temperature sensor by using the ``temperature`` attribute.
+The sensor is accurate to 0.25C.
+
+.. code:: python
+
+    temp = rtc.temperature
+    print("Temperature is %.2f C" % temp)
+
+The temperature is updated every 64 seconds.  You may force an update using
+``force_temperature_conversion``:
+
+.. code:: python
+
+    temp = rtc.force_temperature_conversion
+    print("Updated temperature is %.2f C" % temp)
+
 Contributing
 ============
 
